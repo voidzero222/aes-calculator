@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq4v3huoimbyc"]
+
+[ext_resource type="Script" uid="uid://lawu34ac3s3a" path="res://scripts/main_window.gd" id="1_ac7cv"]
+
+[node name="AESCalculator" type="CanvasLayer" unique_id=97026459]
+script = ExtResource("1_ac7cv")
+
+[node name="Control" type="Control" parent="." unique_id=1945779927]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1772617380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputVBox" type="VBoxContainer" parent="Control/HBoxContainer" unique_id=563643113]
+layout_mode = 2
+
+[node name="InputKey" type="VBoxContainer" parent="Control/HBoxContainer/InputVBox" unique_id=485080404]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/InputVBox/InputKey" unique_id=1338589253]
+layout_mode = 2
+text = "Key"
+
+[node name="KeyGrid" type="GridContainer" parent="Control/HBoxContainer/InputVBox/InputKey" unique_id=91390670]
+layout_mode = 2
+columns = 4
+
+[node name="RandomKeyButton" type="Button" parent="Control/HBoxContainer/InputVBox/InputKey" unique_id=2139731905]
+layout_mode = 2
+text = "Random"
+
+[node name="InputData" type="VBoxContainer" parent="Control/HBoxContainer/InputVBox" unique_id=1926461810]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/InputVBox/InputData" unique_id=833481633]
+layout_mode = 2
+text = "Input"
+
+[node name="DataGrid" type="GridContainer" parent="Control/HBoxContainer/InputVBox/InputData" unique_id=111448677]
+layout_mode = 2
+columns = 4
+
+[node name="Button" type="Button" parent="Control/HBoxContainer/InputVBox" unique_id=1949557136]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Encrypt"
+
+[node name="VSeparator" type="VSeparator" parent="Control/HBoxContainer" unique_id=1903687688]
+layout_mode = 2
+
+[node name="OutputVBox" type="VBoxContainer" parent="Control/HBoxContainer" unique_id=534347470]
+layout_mode = 2
+
+[node name="KeysHFlow" type="HFlowContainer" parent="Control/HBoxContainer/OutputVBox" unique_id=1273120449]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Control/HBoxContainer/OutputVBox" unique_id=1574050861]
+layout_mode = 2
+
+[node name="RoundsHFlow" type="HFlowContainer" parent="Control/HBoxContainer/OutputVBox" unique_id=1975917217]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Control/HBoxContainer/OutputVBox" unique_id=154094735]
+layout_mode = 2
+
+[node name="OutputControl" type="Control" parent="Control/HBoxContainer/OutputVBox" unique_id=822068916]
+layout_mode = 2
+
+[connection signal="pressed" from="Control/HBoxContainer/InputVBox/InputKey/RandomKeyButton" to="." method="_on_random_key_button_pressed"]
