@@ -1,6 +1,6 @@
 extends Node
 class_name Encryption
-
+	
 func get_sbox_value(hex_in:String) -> String:
 	var x:int = hex_in[0].hex_to_int()
 	var y:int = hex_in[1].hex_to_int()
@@ -25,13 +25,13 @@ func mix_columns(matrix_in:Array[PackedStringArray]) -> Array[PackedStringArray]
 		var column:Array[int] = [matrix_in[0][i].hex_to_int(),matrix_in[1][i].hex_to_int(),
 		matrix_in[2][i].hex_to_int(),matrix_in[3][i].hex_to_int()]
 		for row in Constants.GALOIS_FIELD:
-			var mixed_column:Array[int] = [column[0]*row[0]%256,column[1]*row[1]%256,
-			column[2]*row[2]%256,column[3]*row[3]%256]
+			var mixed_column:Array[int] = [mod(column[0]*row[0],256),mod(column[1]*row[1],256),
+			mod(column[2]*row[2],256),mod(column[3]*row[3],256)]
 			matrix_in[0][i] = "%x" % mixed_column[0]
 			matrix_in[1][i] = "%x" % mixed_column[1]
 			matrix_in[2][i] = "%x" % mixed_column[2]
 			matrix_in[3][i] = "%x" % mixed_column[3]
 	return matrix_in
-	
+
 func add_round_key():
 	pass

@@ -3,6 +3,17 @@ extends CanvasLayer
 @onready var key_grid: GridContainer = $Control/HBoxContainer/InputVBox/InputKey/KeyGrid
 @onready var data_grid: GridContainer = $Control/HBoxContainer/InputVBox/InputData/DataGrid
 
+
+func _init():
+	var grr = Encryption.new()
+	
+	print(grr.mix_columns([
+	PackedStringArray(["12","bc","bf","ff"]),
+	PackedStringArray(["dd","32","46","9b"]),
+	PackedStringArray(["66","42","69","67"]),
+	PackedStringArray(["03","78","6f","7a"]),
+	]))
+
 func _ready() -> void:
 	input_fields()
 	
