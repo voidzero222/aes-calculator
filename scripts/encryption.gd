@@ -4,7 +4,7 @@ class_name Encryption
 func get_sbox_value(hex_in:String) -> String:
 	var x:int = hex_in[0].hex_to_int()
 	var y:int = hex_in[1].hex_to_int()
-	return Constants.SBOX[x][y]
+	return Constants.sbox[x][y]
 
 func subbyte_array(matrix_in:Array[PackedStringArray])-> Array[PackedStringArray]:
 	matrix_in = matrix_in.duplicate(true)
