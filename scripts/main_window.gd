@@ -6,13 +6,16 @@ extends CanvasLayer
 
 func _init():
 	var grr = Encryption.new()
-	
-	print(grr.mix_columns([
-	PackedStringArray(["12","bc","bf","ff"]),
-	PackedStringArray(["dd","32","46","9b"]),
-	PackedStringArray(["66","42","69","67"]),
-	PackedStringArray(["03","78","6f","7a"]),
+	print(grr.subbyte_array([
+	PackedStringArray(["04","07"]),
+	PackedStringArray(["16","12"]),
 	]))
+	#print(grr.mix_columns([
+	#PackedStringArray(["d4","e0","b8","1e"]),
+	#PackedStringArray(["bf","b4","41","27"]),
+	#PackedStringArray(["5d","52","11","98"]),
+	#PackedStringArray(["30","ae","f1","e5"]),
+	#]))
 
 func _ready() -> void:
 	input_fields()

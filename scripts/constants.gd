@@ -27,7 +27,7 @@ const RCON:Array[PackedInt32Array] = [
 	[00,00,00,00,00,00,00,00,00],
 ]
 
-const GALOIS_FIELD:Array[PackedInt32Array] = [
+const GALOIS_FIELD:Array[Array] = [
 [02,03,01,01],
 [01,02,03,01],
 [01,01,02,03],
